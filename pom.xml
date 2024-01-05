@@ -62,6 +62,7 @@
     <module>google-http-client-appengine</module>
     <module>google-http-client-android</module>
     <module>google-http-client-apache-v2</module>
+    <module>google-http-client-java-11-http-client</module>
     <module>google-http-client-protobuf</module>
     <module>google-http-client-gson</module>
     <module>google-http-client-jackson2</module>
@@ -195,6 +196,12 @@
       </dependency>
       <dependency>
         <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-java-11-http-client</artifactId>
+        <version>${project.http-client.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.http-client</groupId>
         <artifactId>google-http-client-appengine</artifactId>
         <version>${project.http-client.version}</version>
       </dependency>
@@ -284,8 +291,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
           <configuration>
-            <source>1.7</source>
-            <target>1.7</target>
+            <source>11</source>
+            <target>11</target>
           </configuration>
         </plugin>
         <plugin>
@@ -401,7 +408,7 @@
                 <version>[3.5.2,4.0.0)</version>
               </requireMavenVersion>
               <requireJavaVersion>
-                <version>[1.7,)</version>
+                <version>[11,)</version>
               </requireJavaVersion>
               <requireUpperBoundDeps/>
             </rules>
@@ -500,32 +507,32 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <executions>
-          <execution>
-            <id>java7</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>org.codehaus.mojo.signature</groupId>
-                <artifactId>java17</artifactId>
-                <version>1.0</version>
-              </signature>
-            </configuration>
-          </execution>
-          <execution>
-            <id>android</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <signature>
-                <groupId>net.sf.androidscents.signature</groupId>
-                <artifactId>android-api-level-19</artifactId>
-                <version>4.4.2_r4</version>
-              </signature>
-            </configuration>
-          </execution>
+<!--          <execution>-->
+<!--            <id>java7</id>-->
+<!--            <goals>-->
+<!--              <goal>check</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <signature>-->
+<!--                <groupId>org.codehaus.mojo.signature</groupId>-->
+<!--                <artifactId>java17</artifactId>-->
+<!--                <version>1.0</version>-->
+<!--              </signature>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--          <execution>-->
+<!--            <id>android</id>-->
+<!--            <goals>-->
+<!--              <goal>check</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <signature>-->
+<!--                <groupId>net.sf.androidscents.signature</groupId>-->
+<!--                <artifactId>android-api-level-19</artifactId>-->
+<!--                <version>4.4.2_r4</version>-->
+<!--              </signature>-->
+<!--            </configuration>-->
+<!--          </execution>-->
         </executions>
       </plugin>
       <!-- Build the dependencies report at package time (needed for the assembly artifact). -->
@@ -681,7 +688,7 @@
       <!-- Only run checkstyle plugin on Java 8+ (checkstyle artifact only supports Java 8+) -->
       <id>checkstyle-tests</id>
       <activation>
-        <jdk>[1.8,)</jdk>
+        <jdk>[11,)</jdk>
       </activation>
       <build>
         <plugins>
