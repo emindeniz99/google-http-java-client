@@ -64,6 +64,7 @@
     <module>google-http-client-apache-v2</module>
     <module>google-http-client-java-11-http-client</module>
     <module>google-http-client-reactor-netty</module>
+    <module>google-http-client-spring-webflux-webclient</module>
     <module>google-http-client-protobuf</module>
     <module>google-http-client-gson</module>
     <module>google-http-client-jackson2</module>
@@ -204,6 +205,11 @@
       <dependency>
         <groupId>com.google.http-client</groupId>
         <artifactId>google-http-client-reactor-netty</artifactId>
+        <version>${project.http-client.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-spring-webflux-webclient</artifactId>
         <version>${project.http-client.version}</version>
       </dependency>
 
