@@ -63,6 +63,7 @@
     <module>google-http-client-android</module>
     <module>google-http-client-apache-v2</module>
     <module>google-http-client-java-11-http-client</module>
+    <module>google-http-client-reactor-netty</module>
     <module>google-http-client-protobuf</module>
     <module>google-http-client-gson</module>
     <module>google-http-client-jackson2</module>
@@ -199,6 +200,13 @@
         <artifactId>google-http-client-java-11-http-client</artifactId>
         <version>${project.http-client.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-reactor-netty</artifactId>
+        <version>${project.http-client.version}</version>
+      </dependency>
+
 
       <dependency>
         <groupId>com.google.http-client</groupId>
@@ -420,7 +428,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <doclint>none</doclint>
-          <source>7</source>
+          <source>11</source>
         </configuration>
         <executions>
           <execution>
