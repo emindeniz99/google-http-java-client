@@ -79,6 +79,8 @@ public class DateTimeTest extends TestCase {
   }
 
   public void testEquals() throws InterruptedException {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+
     assertFalse(
         "Check equals with two different tz specified.",
         new DateTime(1234567890L).equals(new DateTime(1234567890L, 120)));
